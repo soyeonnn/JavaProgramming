@@ -2,21 +2,35 @@ public class BankAccount {
     private int balance;
     private Person owner;
 
-    public void setBalance(int newBalance) {
-        balance = newBalance;
+    public BankAccount(int pBalance) {
+        if (pBalance < 0) {
+            balance = 0;
+        } else {
+            balance = pBalance;
+        }
     }
 
-    public int getBalance() {
-        return balance;
+    public BankAccount(Person pOwner) {
+        owner = pOwner;
+        balance = 0;
     }
 
-    public void setOwner(Person newPerson) {
-        owner = newPerson;
+    public BankAccount(int pBalance, Person pOwner) {
+        if (pBalance < 0) {
+            balance = 0;
+        } else {
+            balance = pBalance;
+        }
+        owner = pOwner;
     }
 
-    public Person getOwner() {
-        return owner;
-    }
+    public void setBalance(int newBalance) { balance = newBalance; }
+
+    public int getBalance() { return balance; }
+
+    public void setOwner(Person newPerson) { owner = newPerson; }
+
+    public Person getOwner() { return owner; }
 
     // 입금 메소드
     public boolean deposit(int amount) {

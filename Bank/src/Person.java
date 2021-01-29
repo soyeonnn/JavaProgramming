@@ -4,23 +4,38 @@ public class Person {
     private int cashAmount;
     private BankAccount account;
 
-    public void setAge(int newAge) {
-        if (newAge >= 0) {
-            age = newAge;
+    public Person(String pName, int pAge, int pCashAmount) {
+        name = pName;
+        if (pAge < 0) {
+            age  = 12;
+        } else {
+            age = pAge;
         }
+        if (pCashAmount < 0) {
+            cashAmount = 0;
+        } else {
+            cashAmount = pCashAmount;
+        }
+
     }
 
-    public int getAge() {
-        return age;
+    public Person(String pName, int pAge) {
+        name = pName;
+        if (pAge < 0) {
+            age  = 12;
+        } else {
+            age = pAge;
+        }
+        cashAmount = 0;
     }
 
-    public void setName(String newName) {
-        name = newName;
-    }
+    public void setAge(int newAge) { age = newAge; }
 
-    public String getName() {
-        return name;
-    }
+    public int getAge() { return age; }
+
+    public void setName(String newName) { name = newName; }
+
+    public String getName() { return name; }
 
     public void setCashAmount(int newCashAmount) {
         if (newCashAmount >= 0) {
@@ -28,17 +43,11 @@ public class Person {
         }
     }
 
-    public int getCashAmount() {
-        return cashAmount;
-    }
+    public int getCashAmount() { return cashAmount; }
 
-    public void setAccount(BankAccount newAccount) {
-        account = newAccount;
-    }
+    public void setAccount(BankAccount newAccount) { account = newAccount; }
 
-    public BankAccount getAccount() {
-        return account;
-    }
+    public BankAccount getAccount() { return account; }
 
     // 송금 메소드
     public boolean transfer(Person to, int amount) {
