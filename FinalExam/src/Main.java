@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        /* 코드박스 예약
         // Theater 생성
         Theater t = new Theater(5, 9);
 
@@ -16,6 +17,16 @@ public class Main {
         // 결과 출력
         System.out.println();
         t.printSeatMatrix();
-        System.out.println("총 " + t.getNumberOfReservedSeat() + "개의 좌석이 예약되었습니다.");
+        System.out.println("총 " + t.getNumberOfReservedSeat() + "개의 좌석이 예약되었습니다.");*/
+
+        GradeCalculator gradeCalc = new GradeCalculator("김신의", 4.0, 100);
+
+        gradeCalc.addCourse(new Course("OOP", Course.CREDIT_MAJOR, "A+"));
+        gradeCalc.addCourse(new Course("신호와시스템", Course.CREDIT_MAJOR, "A"));
+        gradeCalc.addCourse(new Course("해석학", Course.CREDIT_MAJOR, "B+"));
+        gradeCalc.addCourse(new Course("확률", Course.CREDIT_MAJOR, "A+"));
+        gradeCalc.addCourse(new Course("스포츠댄스", Course.CREDIT_GENERAL, "A"));
+
+        gradeCalc.print();
     }
 }
