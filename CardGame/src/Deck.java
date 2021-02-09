@@ -2,7 +2,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck {
-    private ArrayList<Card> cards = new ArrayList<>();
+    private ArrayList<Card> cards;
+
+    // Deck 생성자
+    public Deck() { cards = new ArrayList<Card>(); }
 
     public ArrayList<Card> getCards() { return cards; }
 
