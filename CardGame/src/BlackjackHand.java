@@ -1,19 +1,18 @@
 import java.util.ArrayList;
 
-public class BlackjackHand extends Deck {
+public class BlackjackHand extends Deck<BlackjackCard> {
 
     // 핸드의 가치를 리턴
     public int getValue() {
-        ArrayList<Card> cards = getCards();
         int value = 0;
         int aceCount = 0;
 
-        for (Card card : cards) {
-            value += ((BlackjackCard) card).getValue();
-
-            if (((BlackjackCard) card).isAce()) {
+        for (BlackjackCard card : getCards()) {
+            if (card.isAce()) {
                 aceCount++;
             }
+
+            value += card.getValue();
         }
 
         while (aceCount > 0 && value > 21) {

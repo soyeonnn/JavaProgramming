@@ -1,19 +1,19 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Deck {
-    private ArrayList<Card> cards;
+public class Deck<T extends Card> {
+    private ArrayList<T> cards;
 
     // Deck 생성자
-    public Deck() { cards = new ArrayList<Card>(); }
+    public Deck() { cards = new ArrayList<T>(); }
 
-    public ArrayList<Card> getCards() { return cards; }
+    public ArrayList<T> getCards() { return cards; }
 
-    public void addCard(Card card) { cards.add(card); }
+    public void addCard(T card) { cards.add(card); }
 
     // 카드 목록에 있는 모든 카드를 출력
     public void print() {
-        for (Card card : cards) {
+        for (T card : cards) {
             System.out.println(card.toString());
         }
     }
@@ -21,7 +21,7 @@ public class Deck {
     // cards 의 순서를 뒤죽박죽 섞기
     public void shuffle() {
         Random random = new Random();
-        ArrayList<Card> temp = new ArrayList<>(52);
+        ArrayList<T> temp = new ArrayList<>(52);
 
         for (int i=0; i<52; i++) {
             temp.add(cards.remove(random.nextInt(cards.size())));
