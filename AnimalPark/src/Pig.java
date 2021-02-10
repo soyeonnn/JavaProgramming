@@ -1,8 +1,6 @@
 public class Pig extends AbstractAnimal{
 
-    public Pig(String name) {
-        super(name);
-    }
+    public Pig() { super("돼지"); }
 
     @Override
     public void cry() {

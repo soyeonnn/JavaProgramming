@@ -1,8 +1,6 @@
 public class Cat extends AbstractAnimal{
 
-    public Cat(String name) {
-        super(name);
-    }
+    public Cat() { super("고양이"); }
 
     @Override
     public void cry() {
